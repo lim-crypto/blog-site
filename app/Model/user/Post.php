@@ -18,4 +18,15 @@ class Post extends Model
     {
         return 'slug';
     }
+    public function getCreatedAtAttribute($value)
+    {
+        return \Carbon\Carbon::parse($value)->diffForHumans();
+    }
+    public function likes(){
+        return $this->hasMany('App\Model\user\Like');
+    }
+    public function getSlugAttribute($value)
+    {
+        return route('post', $value);
+    }
 }
