@@ -1932,12 +1932,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      likeCount: 0
+      likeCount: 0,
+      link: ""
     };
   },
   props: ["title", "subtitle", "created_at", "postId", "login", "likes", "slug"],
   created: function created() {
-    this.likeCount = this.likes;
+    this.likeCount = this.likes, this.link = "post/" + this.slug;
   },
   methods: {
     likeIt: function likeIt() {
@@ -37553,7 +37554,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "post-preview" }, [
-    _c("a", { attrs: { href: _vm.slug } }, [
+    _c("a", { attrs: { href: _vm.link } }, [
       _c("h2", { staticClass: "post-title" }, [_vm._v(_vm._s(_vm.title))]),
       _vm._v(" "),
       _c("h3", { staticClass: "post-subtitle" }, [

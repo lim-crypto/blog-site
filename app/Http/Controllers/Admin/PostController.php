@@ -151,6 +151,14 @@ class PostController extends Controller
         return redirect()->back();
     }
 
+    public function publish(Post $post)
+    {
+        $post->status = $post->status == 1 ? 0 : 1;
+        $post->save();
+        return redirect()->back();
+    }
+
+
     // upload image
     public function uploadImage($image)
     {

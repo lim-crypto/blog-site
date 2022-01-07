@@ -9,6 +9,11 @@ use App\Model\admin\Permission;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:users.role');
+    }
+
     /**
      * Display a listing of the resource.
      *

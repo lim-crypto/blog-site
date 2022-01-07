@@ -13,12 +13,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Blank Page</h1>
+          <h1>Categories</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+            <li class="breadcrumb-item active">Categories</li>
           </ol>
         </div>
       </div>
@@ -53,16 +53,16 @@
               <td>{{$loop->index+1}}</td>
               <td>{{$category->name}}</td>
               <td>{{$category->slug}}</td>
-              <td><a href="{{route('category.edit',$category->id)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
+              <td><a href="{{route('category.edit',$category->slug)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
               <td>
-                <form id="delete-form-{{$category->id}}" action="{{route('category.destroy',$category->id)}}" method="POST" style="display: none;">
+                <form id="delete-form-{{$category->slug}}" action="{{route('category.destroy',$category->slug)}}" method="POST" style="display: none;">
                   @csrf
                   @method('DELETE')
                 </form>
                 <button type="submit" class="btn btn-danger" onclick="
                 if(confirm('Are you sure you want to delete this?')){
                   event.preventDefault();
-                  document.getElementById('delete-form-{{$category->id}}').submit();
+                  document.getElementById('delete-form-{{$category->slug}}').submit();
                 }else{
                   event.preventDefault();
                 }

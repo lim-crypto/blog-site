@@ -1,6 +1,6 @@
 <template>
   <div class="post-preview">
-    <a :href="slug">
+    <a :href="link">
       <h2 class="post-title">{{ title }}</h2>
       <h3 class="post-subtitle">{{ subtitle }}</h3>
     </a>
@@ -10,7 +10,7 @@
       {{ created_at }}
       <a href="" @click.prevent="likeIt"
         ><small>{{ likeCount }}</small>
-        <i class="fas fa-thumbs-up"  ></i>
+        <i class="fas fa-thumbs-up"></i>
 
         <!-- <i class="fas fa-thumbs-up" v-if="likeCount == 0"></i> -->
         <!-- <i class="fas fa-thumbs-up" style="color:#0085A1;" v-else ></i> -->
@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       likeCount: 0,
+      link: "",
     };
   },
   props: [
@@ -36,7 +37,7 @@ export default {
     "slug",
   ],
   created() {
-    this.likeCount = this.likes;
+    (this.likeCount = this.likes), (this.link = "post/" + this.slug);
   },
   methods: {
     likeIt() {

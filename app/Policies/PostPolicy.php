@@ -21,26 +21,30 @@ class PostPolicy
 
     public function create(Admin $user)
     {
-        return  $this->getPermission($user, 14);
+        return  $this->getPermission($user, 1);
     }
 
     public function update(Admin $user)
     {
-        return  $this->getPermission($user, 6);
+        return  $this->getPermission($user, 2);
     }
 
     public function delete(Admin $user)
     {
-        return  $this->getPermission($user, 7);
+        return  $this->getPermission($user, 3);
+    }
+    public function publish(Admin $user)
+    {
+        return  $this->getPermission($user, 4);
     }
 
     public function tag(Admin $user)
     {
-        return  $this->getPermission($user, 12);
+        return  $this->getPermission($user, 8);
     }
     public function category(Admin $user)
     {
-        return  $this->getPermission($user, 13);
+        return  $this->getPermission($user,9);
     }
     public function restore(Admin $user)
     {

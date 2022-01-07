@@ -25,8 +25,8 @@ class Post extends Model
     public function likes(){
         return $this->hasMany('App\Model\user\Like');
     }
-    public function getSlugAttribute($value)
-    {
-        return route('post', $value);
-    }
+    // public function getSlugAttribute($value)
+    // {
+    //     return route('post', $value);
+    // }
 }

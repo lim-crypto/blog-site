@@ -1,6 +1,6 @@
 @extends('user.app')
 
-@section('bg-img', asset('user/assets/img/home-bg.jpg'))
+@section('bg-img', asset('user/img/twilight.jpg'))
 @section('title', 'Login here')
 
 
@@ -63,6 +63,10 @@
                                 {{ __('Forgot Your Password?') }}
                             </a>
                             @endif
+                            <br>
+                            <a class="btn btn-link" href="{{ route('admin.login') }}">
+                               Login as Admin
+                            </a>
                         </div>
                     </div>
                 </form>

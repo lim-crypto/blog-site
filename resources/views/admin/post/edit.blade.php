@@ -3,6 +3,8 @@
 @section('style')
 <!-- Select2 -->
 <link rel="stylesheet" href="{{asset('Adminlte/plugins/select2/css/select2.min.css')}}">
+<!-- summernote -->
+<link rel="stylesheet" href="{{asset('Adminlte/plugins/summernote/summernote-bs4.min.css')}}">
 @endsection
 @section('main-content')
 <!-- Content Wrapper. Contains page content -->
@@ -16,7 +18,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/post">Posts</a></li>
                         <li class="breadcrumb-item active">Text Editors</li>
                     </ol>
                 </div>
@@ -86,11 +89,13 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                @can('posts.publish' , Auth::user())
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="status" value="1" {{$post->status ? 'checked':''}}> Published
                                     </label>
                                 </div>
+                                @endcan
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -133,6 +138,10 @@
 
 <!-- bs-custom-file-input -->
 <script src="{{asset('Adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+
+<!-- Summernote -->
+<script src="{{asset('Adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
+
 <!-- Page specific script -->
 <script>
     $(function() {

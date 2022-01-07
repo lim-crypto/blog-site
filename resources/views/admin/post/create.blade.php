@@ -2,6 +2,8 @@
 @section('style')
 <!-- Select2 -->
 <link rel="stylesheet" href="{{asset('Adminlte/plugins/select2/css/select2.min.css')}}">
+<!-- summernote -->
+<link rel="stylesheet" href="{{asset('Adminlte/plugins/summernote/summernote-bs4.min.css')}}">
 @endsection
 @section('main-content')
 <!-- Content Wrapper. Contains page content -->
@@ -15,7 +17,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/post">Posts</a></li>
                         <li class="breadcrumb-item active">Text Editors</li>
                     </ol>
                 </div>
@@ -30,9 +33,9 @@
 
                 <!-- general form elements -->
                 <div class="card card-primary">
-                @include('includes.messages')
+                    @include('includes.messages')
                     <!-- form start -->
-                    <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data" >
+                    <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body row">
                             <div class="col-lg-6">
@@ -62,23 +65,25 @@
                                     <label>Select tags</label>
                                     <select class="select2" multiple="multiple" name="tags[]" data-placeholder="Select a State" style="width: 100%;">
                                         @foreach($tags as $tag)
-                                        <option value="{{$tag->id}}" >{{$tag->name}}</option>
+                                        <option value="{{$tag->id}}">{{$tag->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Select categories</label>
                                     <select class="select2" multiple="multiple" name="categories[]" data-placeholder="Select a State" style="width: 100%;">
-                                    @foreach($categories as $category)
-                                    <option value="{{$category->id}}" >{{$category->name}}</option>
-                                    @endforeach
+                                        @foreach($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
+                                @can('posts.publish' , Auth::user())
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="status" value="1" > Published
+                                        <input type="checkbox" name="status" value="1"> Published
                                     </label>
                                 </div>
+                                @endcan
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -86,7 +91,7 @@
                         <div class="card card-outline card-info">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                   Write Post body here
+                                    Write Post body here
                                 </h3>
                             </div>
                             <!-- /.card-header -->
@@ -122,6 +127,9 @@
 
 <!-- bs-custom-file-input -->
 <script src="{{asset('Adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+
+<!-- Summernote -->
+<script src="{{asset('Adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 
 <!-- Page specific script -->
 <script>

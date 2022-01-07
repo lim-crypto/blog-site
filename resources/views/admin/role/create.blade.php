@@ -9,12 +9,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Text Editors</h1>
+                    <h1>Create Role</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Text Editors</li>
+                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/role">Roles</a></li>
+                        <li class="breadcrumb-item active">Create Role</li>
                     </ol>
                 </div>
             </div>
@@ -48,7 +49,7 @@
                                     <div class="col-lg-4">
                                         <label for="name"> Posts Permissions </label>
                                         @foreach($permissions as $permission)
-                                        @if($permission->for == 'post')
+                                        @if($permission->for == 'Post')
                                         <div class="checkbox">
                                             <label><input type="checkbox" value="{{$permission->id}}" name="permission[]">{{$permission->name}}</label>
                                         </div>
@@ -59,7 +60,7 @@
                                     <div class="col-lg-4">
                                         <label for="name">User Permissions</label>
                                         @foreach ($permissions as $permission)
-                                        @if ($permission->for == 'user')
+                                        @if ($permission->for == 'User')
                                         <div class="checkbox">
                                             <label><input type="checkbox" name="permission[]" value="{{ $permission->id }}">{{ $permission->name }}</label>
                                         </div>
@@ -69,7 +70,7 @@
                                     <div class="col-lg-4">
                                         <label for="name">Other Permissions</label>
                                         @foreach ($permissions as $permission)
-                                        @if ($permission->for == 'other')
+                                        @if ($permission->for == 'Other')
                                         <div class="checkbox">
                                             <label><input type="checkbox" name="permission[]" value="{{ $permission->id }}">{{ $permission->name }}</label>
                                         </div>

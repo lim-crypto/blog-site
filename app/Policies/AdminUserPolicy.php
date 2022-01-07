@@ -22,18 +22,26 @@ class AdminUserPolicy
 
     public function create(Admin $admin)
     {
-        return $this->getPermission($admin, 8);
+        return $this->getPermission($admin, 5);
     }
 
 
     public function update(Admin $admin)
     {
-        return $this->getPermission($admin, 9);
+        return $this->getPermission($admin,6);
     }
 
     public function delete(Admin $admin)
     {
-        return $this->getPermission($admin, 10);
+        return $this->getPermission($admin,7);
+    }
+    public function role(Admin $admin)
+    {
+        return $this->getPermission($admin,10);
+    }
+    public function permission(Admin $admin)
+    {
+        return $this->getPermission($admin,11);
     }
 
     public function restore(Admin $admin)

@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 class PermissionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:users.permission');
+    }
     /**
      * Display a listing of the resource.
      *

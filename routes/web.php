@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'User'], function () {
     Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::get('post/{post}', 'PostController@post')->name('post');
 
     Route::get('category/{category}', 'HomeController@category')->name('category');
@@ -15,14 +16,16 @@ Route::group(['namespace' => 'User'], function () {
     // vue routes
     Route::post('getPosts', 'PostController@getAllPosts');
     Route::post('saveLike', 'PostController@saveLike');
-
 });
 
 //admin routes
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function () {
-    Route::get('admin/home', 'HomeController@index')->name('admin.home');
+    Route::get('admin', 'HomeController@index')->name('admin.home');
     Route::resource('admin/user', 'UserController');
     Route::resource('admin/post', 'PostController');
+        // publish post
+        Route::put('admin/post/{post}', 'PostController@publish')->name('post.publish');
+
     Route::resource('admin/tag', 'TagController');
     Route::resource('admin/category', 'CategoryController');
     Route::resource('admin/role', 'RoleController');
@@ -35,5 +38,3 @@ Route::group(['namespace' => 'Admin'], function () {
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

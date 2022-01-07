@@ -13,12 +13,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Blank Page</h1>
+          <h1>Tags</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+            <li class="breadcrumb-item active">Tags</li>
           </ol>
         </div>
       </div>
@@ -54,16 +54,16 @@
               <td>{{$tag->name}}</td>
               <td>{{$tag->slug}}</td>
 
-              <td><a href="{{route('tag.edit',$tag->id)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
+              <td><a href="{{route('tag.edit',$tag->slug)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
               <td>
-                <form id="delete-form-{{$tag->id}}" action="{{route('tag.destroy',$tag->id)}}" method="POST" style="display: none;">
+                <form id="delete-form-{{$tag->slug}}" action="{{route('tag.destroy',$tag->slug)}}" method="POST" style="display: none;">
                   @csrf
                   @method('DELETE')
                 </form>
                 <button type="submit" class="btn btn-danger" onclick="
                 if(confirm('Are you sure you want to delete this?')){
                   event.preventDefault();
-                  document.getElementById('delete-form-{{$tag->id}}').submit();
+                  document.getElementById('delete-form-{{$tag->slug}}').submit();
                 }else{
                   event.preventDefault();
                 }

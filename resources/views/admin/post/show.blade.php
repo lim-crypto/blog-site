@@ -3,7 +3,9 @@
 <!-- DataTables -->
 <link rel="stylesheet" href="{{asset('Adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
 <link rel="stylesheet" href="{{asset('Adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-<link rel="stylesheet" href="{{asset('Adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="{{asset('Adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
 @endsection
 @section('main-content')
 <!-- Content Wrapper. Contains page content -->
@@ -13,12 +15,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Blank Page</h1>
+          <h1>Posts</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+            <li class="breadcrumb-item active">Posts</li>
           </ol>
         </div>
       </div>
@@ -46,6 +48,10 @@
               <th>Sub title</th>
               <th>Slug</th>
               <th>Created At</th>
+              <th>Status</th>
+              @can('posts.publish' , Auth::user())
+              <th>Published</th>
+              @endcan
               @can('posts.update' , Auth::user())
               <th>Edit</th>
               @endcan
@@ -63,9 +69,28 @@
               <td>{{$post->slug}}</td>
               <!-- created_at -->
               <td>
-                {{$post->created_at->diffForHumans()}}
+                {{$post->created_at}}
               </td>
-
+              <!-- status -->
+              <td>
+                @if($post->status )
+                <span class="badge badge-success">Published</span>
+                @else
+                <span class="badge badge-danger">Unpublished</span>
+                @endif
+              </td>
+              @can('posts.publish' , Auth::user())
+              <td>
+                <form action="{{route('post.publish',$post->slug)}}" method="POST" id="publish-form-{{$post->slug}}">
+                  @csrf
+                  @method('PUT')
+                  <div class="icheck-primary  d-inline ">
+                    <input  type="checkbox" @if($post->status) checked @endif id="checkboxPrimary1" onclick="document.getElementById('publish-form-{{$post->slug}}').submit();  "><label for="checkboxPrimary1">
+                    </label>
+                  </div>
+                </form>
+              </td>
+              @endcan
               @can('posts.update' , Auth::user())
               <td><a href="{{route('post.edit',$post->slug)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
               @endcan
@@ -95,6 +120,10 @@
               <th>Sub title</th>
               <th>Slug</th>
               <th>Created At</th>
+              <th>Status</th>
+              @can('posts.publish' , Auth::user())
+              <th>Published</th>
+              @endcan
               @can('posts.update' , Auth::user())
               <th>Edit</th>
               @endcan

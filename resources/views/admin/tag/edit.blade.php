@@ -9,12 +9,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Text Editors</h1>
+                    <h1> Edit Tags</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Text Editors</li>
+                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/tag">Tag</a></li>
+                        <li class="breadcrumb-item active">Edit Tag</li>
                     </ol>
                 </div>
             </div>
@@ -30,19 +31,19 @@
                 <div class="card card-primary card-outline">
                     @include('includes.messages')
                     <!-- form start -->
-                    <form action="{{route('tag.update',$tag->id)}}" method="POST" >
+                    <form action="{{route('tag.update',$tag->slug)}}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="card-body row">
                             <div class="mx-auto col-lg-6">
                                 <div class="form-group">
                                     <label for="tag">Post tag</label>
-                                    <input type="text" class="form-control" name="name" id="tag" placeholder="title" value="{{$tag->name}}" >
+                                    <input type="text" class="form-control" name="name" id="tag" placeholder="title" value="{{$tag->name}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="slug">tag slug</label>
-                                    <input type="text" class="form-control" name="slug" id="slug" placeholder="slug" value="{{$tag->slug}}" >
+                                    <input type="text" class="form-control" name="slug" id="slug" placeholder="slug" value="{{$tag->slug}}">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Submit</button>
