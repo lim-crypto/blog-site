@@ -45,11 +45,9 @@ class CategoryController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'slug' => 'required',
         ]);
         $category = new Category();
         $category->name = $request->name;
-        $category->slug = $request->slug;
         $category->save();
         return redirect()->route('category.index');
     }
@@ -87,10 +85,8 @@ class CategoryController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'slug' => 'required',
         ]);
         $category->name = $request->name;
-        $category->slug = $request->slug;
         $category->save();
         return redirect()->route('category.index');
     }

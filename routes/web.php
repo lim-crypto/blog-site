@@ -24,7 +24,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
     Route::resource('admin/user', 'UserController');
     Route::resource('admin/post', 'PostController');
         // publish post
-        Route::put('admin/post/{post}', 'PostController@publish')->name('post.publish');
+        Route::put('admin/post/{post}/publish', 'PostController@publish')->name('post.publish');
 
     Route::resource('admin/tag', 'TagController');
     Route::resource('admin/category', 'CategoryController');

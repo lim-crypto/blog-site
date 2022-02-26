@@ -39,11 +39,6 @@
                                     <label for="category">Post category</label>
                                     <input type="text" class="form-control" name="name" id="category" placeholder="title">
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="slug">category slug</label>
-                                    <input type="text" class="form-control" name="slug" id="slug" placeholder="slug">
-                                </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <a href="{{route('category.index')}}" class="btn btn-warning">Back</a>

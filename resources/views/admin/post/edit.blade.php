@@ -49,10 +49,6 @@
                                     <label for="subtitle">Post Sub Title</label>
                                     <input type="text" class="form-control" name="subtitle" id="subtitle" placeholder="sub title" value="{{$post->subtitle}}">
                                 </div>
-                                <div class="form-group">
-                                    <label for="slug">Post Slug</label>
-                                    <input type="text" class="form-control" name="slug" id="slug" placeholder="slug" value="{{$post->slug}}">
-                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">

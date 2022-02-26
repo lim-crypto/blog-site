@@ -43,11 +43,9 @@ class TagController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'slug' => 'required',
         ]);
         $tag = new Tag();
         $tag->name = $request->name;
-        $tag->slug = $request->slug;
         $tag->save();
         return redirect()->route('tag.index');
 
@@ -87,10 +85,8 @@ class TagController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'slug' => 'required',
         ]);
         $tag->name = $request->name;
-        $tag->slug = $request->slug;
         $tag->save();
         return redirect()->route('tag.index');
 

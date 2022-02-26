@@ -10,7 +10,7 @@
 @section('main-content')
 
 <div id="fb-root"></div>
-<!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=478611033596320&autoLogAppEvents=1" nonce="akZFqsq7"></script> -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=478611033596320&autoLogAppEvents=1" nonce="akZFqsq7"></script>
 <!-- Post Content-->
 <article class="mb-4">
     <div class="container px-4 px-lg-5">
@@ -35,8 +35,9 @@
                     </small>
                 </a>
                 @endforeach
+            <div class="fb-comments" data-href="http://localhost:8000/" data-width="" data-numposts="5"></div>
+
             </div>
-            <!-- <div class="fb-comments" data-href="http://localhost:8000/" data-width="" data-numposts="5"></div> -->
         </div>
     </div>
 </article>

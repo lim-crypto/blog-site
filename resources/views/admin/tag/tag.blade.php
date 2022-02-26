@@ -39,11 +39,6 @@
                                     <label for="tag">Post tag</label>
                                     <input type="text" class="form-control" name="name" id="tag" placeholder="title">
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="slug">Tag slug</label>
-                                    <input type="text" class="form-control" name="slug" id="slug" placeholder="slug">
-                                </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <a href="{{route('tag.index')}}" class="btn btn-warning">Back</a>

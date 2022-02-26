@@ -47,10 +47,6 @@
                                     <label for="subtitle">Post Sub Title</label>
                                     <input type="text" class="form-control" name="subtitle" id="subtitle" placeholder="sub title">
                                 </div>
-                                <div class="form-group">
-                                    <label for="slug">Post Slug</label>
-                                    <input type="text" class="form-control" name="slug" id="slug" placeholder="slug">
-                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -140,7 +136,17 @@
         bsCustomFileInput.init();
 
         // Summernote
-        $('#summernote').summernote()
+        $('#summernote').summernote({
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture']],
+                ['view', ['fullscreen', 'help']]
+            ]
+        });
     })
 </script>
 @endsection
