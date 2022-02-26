@@ -20,8 +20,8 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->text('body')->nullable();
             $table->boolean('status')->nullable();
-            $table->integer('posted_by')->nullable();
-            $table->string('image')->nullable();
+            $table->string('posted_by');
+            $table->string('image');
             $table->timestamps();
         });
     }

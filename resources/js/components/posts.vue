@@ -6,7 +6,7 @@
     </a>
     <p class="post-meta">
       Posted by
-      <a href="#!">Start Bootstrap</a>
+       {{ posted_by}}
       {{ created_at }}
       <a href="" @click.prevent="likeIt"
         ><small>{{ likeCount }}</small>
@@ -30,6 +30,7 @@ export default {
   props: [
     "title",
     "subtitle",
+    "posted_by",
     "created_at",
     "postId",
     "login",

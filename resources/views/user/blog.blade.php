@@ -11,6 +11,7 @@
             v-for='value in blog'
             :title='value.title'
             :subtitle='value.subtitle'
+            :posted_by='value.posted_by'
             :created_at='value.created_at'
             :slug='value.slug'
             :key='value.index'

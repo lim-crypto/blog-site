@@ -23,6 +23,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+
         return view('admin.post.show', compact('posts'));
     }
 
@@ -65,6 +66,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
         $post->status = $request->status;
+        $post->posted_by = auth()->user()->name;
         $post->save();
         $post->body = $this->getDescriptionAndImages($request->body, $request->slug);
         $post->save();

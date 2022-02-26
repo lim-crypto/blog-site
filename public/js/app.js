@@ -1936,7 +1936,7 @@ __webpack_require__.r(__webpack_exports__);
       link: ""
     };
   },
-  props: ["title", "subtitle", "created_at", "postId", "login", "likes", "slug"],
+  props: ["title", "subtitle", "posted_by", "created_at", "postId", "login", "likes", "slug"],
   created: function created() {
     this.likeCount = this.likes, this.link = "post/" + this.slug;
   },
@@ -37563,9 +37563,13 @@ var render = function () {
     ]),
     _vm._v(" "),
     _c("p", { staticClass: "post-meta" }, [
-      _vm._v("\n    Posted by\n    "),
-      _c("a", { attrs: { href: "#!" } }, [_vm._v("Start Bootstrap")]),
-      _vm._v("\n    " + _vm._s(_vm.created_at) + "\n    "),
+      _vm._v(
+        "\n    Posted by\n     " +
+          _vm._s(_vm.posted_by) +
+          "\n    " +
+          _vm._s(_vm.created_at) +
+          "\n    "
+      ),
       _c(
         "a",
         {
@@ -49993,8 +49997,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Jerald Lim\Desktop\blog\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Jerald Lim\Desktop\blog\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Jerald Lim\Documents\A--LaravelProjects\blog\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Jerald Lim\Documents\A--LaravelProjects\blog\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

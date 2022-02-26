@@ -19,6 +19,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the first post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Second Post',
@@ -27,6 +28,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the second post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Third Post',
@@ -35,6 +37,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the third post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Fourth Post',
@@ -43,6 +46,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the fourth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Fifth Post',
@@ -51,6 +55,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the fifth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Sixth Post',
@@ -59,6 +64,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the sixth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Seventh Post',
@@ -67,6 +73,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the seventh post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Eighth Post',
@@ -75,6 +82,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the eighth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Ninth Post',
@@ -83,6 +91,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the ninth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Tenth Post',
@@ -91,6 +100,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the tenth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Eleventh Post',
@@ -99,6 +109,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the eleventh post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Twelfth Post',
@@ -107,6 +118,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the twelfth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Thirteenth Post',
@@ -115,6 +127,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the thirteenth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Fourteenth Post',
@@ -123,6 +136,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the fourteenth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Fifteenth Post',
@@ -131,6 +145,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the fifteenth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Sixteenth Post',
@@ -139,6 +154,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the sixteenth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Seventeenth Post',
@@ -147,6 +163,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the seventeenth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Eighteenth Post',
@@ -155,6 +172,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the eighteenth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Nineteenth Post',
@@ -163,6 +181,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the nineteenth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
         Post::create([
             'title' => 'Twentieth Post',
@@ -171,6 +190,7 @@ class PostSeeder extends Seeder
             'body' => 'This is the twentieth post body content',
             'status' => 1,
             'image' => 'posts-bg.jpg',
+            'posted_by' => 'Jerald Lim',
         ]);
 
 
